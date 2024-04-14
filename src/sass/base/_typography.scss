@@ -1,0 +1,76 @@
+@import "../abstracts/mixins";
+@import "../abstracts/variables";
+
+.text {
+  &-right {
+    text-align: right;
+  }
+
+  &-center {
+    text-align: center;
+  }
+
+  &-left {
+    text-align: left;
+  }
+
+  &-justify {
+    text-align: justify;
+  }
+
+  &-uppercase {
+    text-transform: uppercase;
+  }
+
+  &-light {
+    font-weight: 300;
+  }
+
+  &-regular {
+    font-weight: 400;
+  }
+
+  &-medium {
+    font-weight: 500;
+  }
+
+  &-semibold {
+    font-weight: 600;
+  }
+
+  &-bold {
+    font-weight: 700;
+  }
+
+  &-m {
+
+    font-size: 18px;
+    line-height: 32px;
+
+  }
+
+  &-l {
+    font-weight: 400;
+    @include fontSize(14, 18);
+    line-height: 1.25;
+
+  }
+
+  &-xl {
+    @include fontSize(24, 48);
+    line-height: 1.33;
+  }
+}
+
+.heading-font {
+  font-family: 'Gilroy', sans-serif;
+}
+
+.icon-ar-right:before {
+  content: "\e900";
+}
+
+.icon-check:before {
+  content: "\e901";
+  color: #6534c9;
+}

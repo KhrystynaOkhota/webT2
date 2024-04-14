@@ -1,0 +1,327 @@
+@import "../abstracts/mixins";
+@import "../abstracts/variables";
+
+.mb-40 {
+  margin-bottom: 40px;
+}
+
+.s-introduce {
+  &__inner {
+    padding-left: 40px;
+    @media (max-width: $breakpoint-md) {
+      padding-left: 0;
+    }
+  }
+
+  &__row {
+    @media (min-width: $breakpoint-md) {
+      flex-direction: row-reverse;
+    }
+  }
+
+  & .container {
+    &:after {
+      content: '';
+      width: calc(100% - 30px);
+      height: 1px;
+      background-color: rgba(0, 0, 0, 0.1);
+      position: absolute;
+      bottom: -40px;
+      left: 15px;
+    }
+  }
+
+  &__heading {
+    margin-bottom: 27px;
+    color: $accentColor;
+    @media (max-width: $breakpoint-md) {
+      margin-bottom: 20px;
+    }
+  }
+
+  &__img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: top;
+
+    &-wrap {
+      border-radius: 20px;
+      overflow: hidden;
+      padding-bottom: 62%;
+      min-height: 220px;
+      @media (max-width: $breakpoint-md) {
+        margin-top: 30px;
+      }
+    }
+  }
+
+  & .decor {
+    position: absolute;
+    right: 0;
+    width: 110px;
+    height: 110px;
+    object-fit: contain;
+    @media (max-width: $breakpoint-md) {
+      display: none;
+    }
+  }
+
+  & .btn-primary {
+    margin: 0;
+  }
+}
+
+.s-gallery {
+
+  & .swiper {
+    &-slide {
+      opacity: 0.20000000298023224;
+      transition: opacity ease-out .4s;
+      @media (min-width: $breakpoint-md) {
+        &-next {
+          //opacity: 1;
+        }
+      }
+
+      &-active {
+        opacity: 1;
+      }
+    }
+
+    &-controls {
+      margin-top: 54px;
+      @media (max-width: $breakpoint-md) {
+        margin-top: 35px;
+        height: 20px;
+      }
+    }
+
+    &-button {
+      &__wrap {
+        @media (max-width: $breakpoint-md) {
+          margin-top: 30px;
+          -webkit-box-pack: end;
+          -webkit-justify-content: flex-end;
+          -ms-flex-pack: end;
+          justify-content: flex-end;
+        }
+      }
+
+      &-next, &-prev {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        @media (max-width: $breakpoint-md) {
+          position: relative;
+          top: auto;
+          transform: none;
+        }
+
+      }
+
+      &-next {
+
+        right: 0;
+      }
+
+      &-prev {
+        left: 0;
+      }
+    }
+
+    &-pagination {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%);
+      margin: 0;
+      width: auto;
+
+      &-bullet {
+        font-size: 0;
+        width: 62px;
+        height: 4px;
+        border: none;
+        border-radius: 0;
+        background: #D9D9D9;
+        margin: 0 1.5px;
+        @media (max-width: $breakpoint-md) {
+          width: 20px;
+          height: 2px;
+        }
+
+        &-active {
+          background-color: #40A5D9;
+        }
+      }
+    }
+  }
+
+  &__img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    z-index: 1;
+
+    &-wrap {
+      padding-top: 62%;
+      position: relative;
+      overflow: hidden;
+      border-radius: 20px;
+
+    }
+  }
+
+  &__inner {
+    @media (min-width: $breakpoint-md) {
+      width: calc(100% - 158px);
+      margin: 0 auto;
+    }
+    @media (max-width: $breakpoint-md) {
+      width: calc(100% + 15px);
+    }
+  }
+
+}
+
+.s-help {
+  margin-bottom: 42px;
+
+  & .container {
+    @media (max-width: $breakpoint-md) {
+      padding: 0;
+    }
+  }
+
+  &__title {
+    margin-bottom: 30px;
+    @include fontSize(22, 30);
+    color: $accentColor;
+  }
+
+  &__wrap {
+    background: #FFF;
+    box-shadow: 0px 0px 30px 0px rgba(72, 88, 138, 0.10);
+    padding: 60px 0 70px 0;
+    @media (max-width: $breakpoint-md) {
+      padding: 24px 20px 33px 20px;
+    }
+  }
+}
+
+.s-text {
+  &__img {
+    margin: 40px auto 0 auto;
+    border-radius: 20px;
+    max-height: 480px;
+    width: 100%;
+    object-fit: cover;
+  }
+}
+
+.s-article {
+  padding-top: 40px;
+
+  &__img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+
+    &-wrap {
+      border-radius: 20px;
+      overflow: hidden;
+      padding-bottom: 62%;
+      margin-bottom: 40px;
+    }
+  }
+
+  &__title {
+
+    margin-bottom: 30px;
+    color: $accentColor;
+  }
+
+  &__date {
+    margin-bottom: 35px;
+  }
+
+  &__desc {
+
+    @media (min-width: $breakpoint-md) {
+
+    }
+  }
+}
+
+.s-video {
+  & .btn-pulse {
+    bottom: 50px;
+    right: 50px;
+    @media (max-width: $breakpoint-md) {
+      right: auto;
+      bottom: auto;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+  }
+}
+
+.preload {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.4);
+
+
+  &__wrap {
+
+    position: relative;
+    padding-bottom: 62%;
+    border-radius: 20px;
+    overflow: hidden;
+
+    & video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: none;
+      position: absolute;
+    }
+  }
+
+  &__img {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    object-fit: cover;
+  }
+
+  .btn-play {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 160px;
+    height: 160px;
+    z-index: 6;
+    cursor: pointer;
+  }
+}
+

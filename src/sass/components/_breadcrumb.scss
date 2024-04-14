@@ -1,0 +1,99 @@
+@import "../abstracts/mixins";
+@import "../abstracts/variables";
+
+.kama_breadcrumbs {
+
+  &__wrap {
+    /* position: absolute;
+     width: 100%;
+     top: 0;
+     left: 0;*/
+
+  }
+
+  @media (min-width: $breakpoint-md) {
+    display: flex;
+  }
+  background-color: transparent;
+  padding: 18px 0;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.2;
+  color: #4E4E4E;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: block;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  margin: 0;
+
+
+  width: 100%;
+
+
+  z-index: 2;
+  white-space: nowrap;
+
+  position: relative;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  overflow: auto;
+  @media (max-width: $breakpoint-md) {
+    padding: 20px 0;
+  }
+
+  & a {
+    color: #979797;
+  }
+
+  & span {
+
+  }
+
+  & .kb {
+    &_sep {
+
+      margin: 0 5px;
+      @media (max-width: $breakpoint-md) {
+        margin: 0 3px;
+      }
+    }
+
+    &_title {
+
+      color: $accentColor;
+      /* font-weight: 500;
+       display: inline-block;
+       max-width: 200px;
+       overflow: hidden;
+       -o-text-overflow: ellipsis;
+       text-overflow: ellipsis;
+       white-space: nowrap;*/
+    }
+  }
+}
+
+.woocommerce-breadcrumb {
+  width: 100%;
+  max-width: 1340px!important;
+  margin: auto!important;
+  padding: 10px 15px!important;
+  @media (max-width: $breakpoint-md) {
+    padding-bottom: 20px!important;
+  }
+  & a, & {
+    font-weight: 300;
+    font-size: 14px !important;
+    line-height: 18px;
+    color: #4E4E4E !important;
+    position: relative;
+    font-family: 'Mulish', sans-serif;
+  }
+}

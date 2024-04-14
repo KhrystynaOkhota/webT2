@@ -1,0 +1,186 @@
+@import "../abstracts/mixins";
+@import "../abstracts/variables";
+
+.footer {
+  overflow: hidden;
+
+  & .brief {
+    @media (max-width: $breakpoint-md) {
+      text-align: center;
+      margin-bottom: 63px;
+    }
+
+    & .heading {
+      margin-bottom: 16px;
+    }
+
+    & .description {
+      margin-bottom: 32px;
+      max-width: 430px;
+      @media (max-width: $breakpoint-md) {
+
+        margin: 0 auto 36px auto;
+      }
+    }
+
+    & .btn-primary {
+
+    }
+  }
+
+  &__btn {
+    font-size: 16px;
+    line-height: 41px;
+    border: 1px solid $accentColor;
+    border-radius: 18px;
+    padding: 14px 15px 13px 15px;
+    min-width: 209px;
+    display: inline-block;
+
+  }
+
+  &__phone {
+    font-size: 22px;
+    margin-right: 25px;
+    @include transition(.4);
+
+    &:hover {
+      color: $accentColor;
+    }
+  }
+
+  &__btn {
+
+  }
+
+  &__heading {
+    margin-bottom: 26px;
+    color: $accentColor;
+    font-size: 18px;
+  }
+
+  &__top {
+    padding: 90px 0 73px 0;
+
+    @media (max-width: $breakpoint-md) {
+      padding: 36px 0;
+    }
+  }
+
+  &__bottom {
+    padding: 37px 0;
+    @media (max-width: $breakpoint-md) {
+      padding: 31px 0 33px 0;
+    }
+
+    &:before {
+      content: '';
+      background: rgba(0, 0, 0, 0.19);
+      position: absolute;
+      height: 9px;
+      width: 1000vw;
+      left: -50vw;
+      top: 0;
+    }
+
+    & .copyright {
+      font-size: 18px;
+      @media (max-width: $breakpoint-md) {
+        order: 3;
+        width: 100%;
+        text-align: center;
+        margin-top: 31px;
+      }
+    }
+  }
+
+  &-item {
+    // padding: 0 5px;
+    @media (max-width: $breakpoint-md) {
+      margin-bottom: 30px;
+    }
+
+    &__title {
+      font-weight: 600;
+      @include fontSize(14, 16);
+      line-height: 1.25;
+      text-transform: uppercase;
+      color: $primaryColor;
+      margin-bottom: 36px;
+      @media (max-width: $breakpoint-xl) {
+        min-height: auto;
+
+      }
+    }
+  }
+
+
+  & .menu {
+
+    text-align: center;
+    margin-bottom: 10px;
+    @media (max-width: 400px) {
+      display: block;
+      text-align: center;
+    }
+
+    &-item {
+      padding: 0 11px;
+      //  flex: 0 0 50%;
+      display: inline-block;
+
+      & a {
+        font-weight: 400;
+
+        text-decoration-line: none;
+        font-size: 18px;
+        line-height: 1.25;
+        color: $whiteColor;
+        @include transition(.3);
+
+        &:hover {
+          color: $accentColor;
+        }
+      }
+    }
+  }
+
+
+  & .social__list {
+    margin-top: 12px;
+    @media (max-width: $breakpoint-md) {
+
+
+    }
+  }
+
+  & .contact {
+    &__list {
+      @media (max-width: $breakpoint-md) {
+
+        margin-bottom: 36px;
+      }
+    }
+
+    &__link {
+      font-size: 18px;
+      @include transition(.4);
+    }
+
+    &__item {
+      &:not(&:last-child) {
+        margin-bottom: 26px;
+        @media (max-width: $breakpoint-md) {
+
+        }
+      }
+
+      &:hover {
+        a {
+          color: $accentColor;
+        }
+      }
+    }
+  }
+}
+
