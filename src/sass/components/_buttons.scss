@@ -34,13 +34,15 @@
     min-width: 190px;
     text-align: center;
     width: 100%;
-    max-width: 300px;
+
+    display: inline-block;
     @include transition(.3);
     @media (min-width: $breakpoint-lg) {
-      //min-width: 300px;
+      max-width: 300px;
     }
     @media (max-width: $breakpoint-lg) {
       line-height: 1;
+      max-width: 225px;
     }
 
     &:hover {

@@ -28,30 +28,6 @@
     }
   }
 
-  &__btn {
-    font-size: 16px;
-    line-height: 41px;
-    border: 1px solid $accentColor;
-    border-radius: 18px;
-    padding: 14px 15px 13px 15px;
-    min-width: 209px;
-    display: inline-block;
-
-  }
-
-  &__phone {
-    font-size: 22px;
-    margin-right: 25px;
-    @include transition(.4);
-
-    &:hover {
-      color: $accentColor;
-    }
-  }
-
-  &__btn {
-
-  }
 
   &__heading {
     margin-bottom: 26px;
@@ -92,6 +68,37 @@
         margin-top: 31px;
       }
     }
+
+    & .cta{
+      &__btn {
+        font-size: 16px;
+        line-height: 41px;
+        border: 1px solid $accentColor;
+        border-radius: 18px;
+        padding: 14px 15px 13px 15px;
+        min-width: 209px;
+        display: inline-block;
+
+      }
+
+      &__phone {
+        font-size: 22px;
+        margin-right: 25px;
+        @include transition(.4);
+        display: inline-block;
+        @media (max-width: $breakpoint-md) {
+          margin-bottom: 27px;
+        }
+        &:hover {
+          color: $accentColor;
+        }
+      }
+      @media (max-width: $breakpoint-md) {
+        width:50%;
+      }
+
+    }
+
   }
 
   &-item {
@@ -118,16 +125,24 @@
   & .menu {
 
     text-align: center;
-    margin-bottom: 10px;
-    @media (max-width: 400px) {
+
+    @media (max-width: $breakpoint-md) {
       display: block;
-      text-align: center;
+      text-align: left;
+      width:50%;
     }
 
     &-item {
       padding: 0 11px;
       //  flex: 0 0 50%;
       display: inline-block;
+      @media (max-width: $breakpoint-md) {
+        display: block;
+        padding: 0;
+        & + li {
+          margin-top: 22px;
+        }
+      }
 
       & a {
         font-weight: 400;
@@ -163,7 +178,7 @@
     }
 
     &__link {
-      font-size: 18px;
+      @include fontSize(16, 18);
       @include transition(.4);
     }
 
@@ -182,5 +197,7 @@
       }
     }
   }
+
+
 }
 
