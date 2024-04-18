@@ -32,14 +32,14 @@
     height: 40px;
     cursor: pointer;
     border-radius: 100%;
-    background: red;
+
     @media (max-width: $breakpoint-md) {
 
     }
 
     & i {
-      color: $primaryColor;
-      @include fontSize(24, 26);
+      color: $whiteColor;
+      @include fontSize(18, 22);
       @include transition(.4);
     }
 

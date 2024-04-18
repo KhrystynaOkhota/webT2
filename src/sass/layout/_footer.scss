@@ -29,14 +29,15 @@
   }
 
 
-  &__heading {
-    margin-bottom: 26px;
-    color: $accentColor;
-    font-size: 18px;
+  &__top, &__bottom {
+    @media (max-width: $breakpoint-md) {
+
+      //margin: 0 auto;
+    }
   }
 
   &__top {
-    padding: 90px 0 73px 0;
+    padding: 10px 0 73px 0;
 
     @media (max-width: $breakpoint-md) {
       padding: 36px 0;
@@ -60,7 +61,7 @@
     }
 
     & .copyright {
-      font-size: 18px;
+      @include fontSize(16, 18);
       @media (max-width: $breakpoint-md) {
         order: 3;
         width: 100%;
@@ -69,32 +70,49 @@
       }
     }
 
-    & .cta{
+    & .cta {
       &__btn {
-        font-size: 16px;
-        line-height: 41px;
+        @include fontSize(14, 16);
+        line-height: 1;
         border: 1px solid $accentColor;
         border-radius: 18px;
-        padding: 14px 15px 13px 15px;
+        padding: 26px 15px 25px 15px;
         min-width: 209px;
         display: inline-block;
+        @media (min-width: 767px) and (max-width: 1200px) {
+          display: none;
+        }
+        @media (max-width: $breakpoint-md) {
+          min-width: 190px;
+        }
+        @media (max-width: 400px) {
+          min-width: 145px;
+          padding: 10px 10px 11px 10px;
+        }
+
 
       }
 
       &__phone {
         font-size: 22px;
+        @include fontSize(16, 22);
         margin-right: 25px;
         @include transition(.4);
         display: inline-block;
         @media (max-width: $breakpoint-md) {
           margin-bottom: 27px;
+
+          margin-right: 0;
         }
+
         &:hover {
           color: $accentColor;
         }
       }
+
       @media (max-width: $breakpoint-md) {
-        width:50%;
+        width: 50%;
+        text-align: right;
       }
 
     }
@@ -102,22 +120,32 @@
   }
 
   &-item {
-    // padding: 0 5px;
-    @media (max-width: $breakpoint-md) {
-      margin-bottom: 30px;
+    &:not(&:last-child) {
+      position: relative;
+
+      &:after {
+        content: '';
+        width: 1px;
+        height: 100%;
+        background: rgba(255, 255, 255, .40);
+        position: absolute;
+        top: 50%;
+        left: 160%;
+        transform: translateY(-50%);
+        @media (max-width: $breakpoint-xl) {
+          display: none;
+        }
+      }
+
+      @media (max-width: 420px) {
+        margin-bottom: 30px;
+      }
     }
 
-    &__title {
-      font-weight: 600;
-      @include fontSize(14, 16);
-      line-height: 1.25;
-      text-transform: uppercase;
-      color: $primaryColor;
-      margin-bottom: 36px;
-      @media (max-width: $breakpoint-xl) {
-        min-height: auto;
-
-      }
+    &__heading {
+      margin-bottom: 26px;
+      color: $accentColor;
+      font-size: 18px;
     }
   }
 
@@ -129,7 +157,7 @@
     @media (max-width: $breakpoint-md) {
       display: block;
       text-align: left;
-      width:50%;
+      width: 50%;
     }
 
     &-item {
@@ -148,7 +176,7 @@
         font-weight: 400;
 
         text-decoration-line: none;
-        font-size: 18px;
+        @include fontSize(16, 18);
         line-height: 1.25;
         color: $whiteColor;
         @include transition(.3);
@@ -160,12 +188,10 @@
     }
   }
 
-
   & .social__list {
     margin-top: 12px;
     @media (max-width: $breakpoint-md) {
-
-
+      min-width: 144px;
     }
   }
 
@@ -197,7 +223,6 @@
       }
     }
   }
-
 
 }
 

@@ -1,6 +1,19 @@
 @import "../abstracts/mixins";
 @import "../abstracts/variables";
 
+.decor {
+  position: absolute;
+
+  z-index: -1;
+
+  &.circle-blur {
+    width: 427px;
+    height: 427px;
+    border-radius: 100%;
+    background: rgba(176, 75, 255, .61);
+    filter: blur(249px);
+  }
+}
 
 .info {
   &__list {
@@ -18,6 +31,7 @@
       padding-left: 25px;
       position: relative;
       @include fontSize(14, 18);
+      line-height: 1.5;
 
       & + li {
         margin-top: 28px;
@@ -113,7 +127,8 @@
       margin-bottom: 46px;
       @media (max-width: $breakpoint-md) {
         padding: 17px 12px;
-        margin-bottom: 20px;
+
+        margin: 0 auto 20px auto;
       }
     }
 
@@ -189,6 +204,11 @@
       border-radius: 16px;
       padding: 10.5px 9px;
       position: relative;
+      @media (min-width: 767px) and (max-width: 1200px) {
+        max-width: 190px;
+      }
+
+
       @media (max-width: $breakpoint-md) {
         max-width: 148px;
       }
@@ -198,6 +218,11 @@
         //top: -80px;
         @media (max-width: $breakpoint-md) {
           top: 60px;
+        }
+
+        @media (min-width: 767px) and (max-width: 1200px) {
+          top: 60px;
+          left: -15px;
         }
       }
 
@@ -214,7 +239,11 @@
         @media (max-width: $breakpoint-md) {
           top: 0;
           right: 0;
+        }
 
+        @media (min-width: 767px) and (max-width: 1200px) {
+          top: 0;
+          right: -15px;
         }
       }
 
@@ -223,6 +252,9 @@
         @media (max-width: $breakpoint-md) {
           left: 0;
           top: -60px;
+        }
+        @media (min-width: 767px) and (max-width: 1200px) {
+
         }
       }
 
@@ -242,16 +274,16 @@
   }
 
   & .decor {
-    position: absolute;
-    bottom: 0;
-    z-index: -1;
-
-    &.circle-blur {
-      width: 427px;
-      height: 427px;
-      border-radius: 100%;
-      background: rgba(176, 75, 255, .61);
-      filter: blur(249px);
+    &.circle-blur{
+      bottom: 0;
+    }
+    &.line{
+      bottom:30%;
+      width: 950px;
+      max-width: max-content;
+      @media (max-width: $breakpoint-md) {
+        width: 130%;
+      }
     }
   }
 }
@@ -492,7 +524,7 @@
 
     &__item {
       @media (max-width: $breakpoint-md) {
-        margin-bottom: 69px;
+        margin-bottom: 52px;
         text-align: center;
       }
     }
@@ -557,56 +589,6 @@
     }
   }
 
-  .steps {
-    &__column {
-      margin-bottom: 16px;
-      @media (max-width: $breakpoint-md) {
-        margin-bottom: 8px;
-      }
-    }
-
-    &__item {
-      background-color: rgba(255, 255, 255, 1);
-      border: 1px solid rgba(101, 52, 201, 0.25);
-      border-radius: 10px;
-      padding: 20px;
-      height: 100%;
-      @include transition(.5);
-
-      &:hover {
-        background-color: $accentColor;
-
-        & .steps__description, & .steps__heading, & .steps__number {
-          color: rgba(255, 255, 255, 1);
-        }
-      }
-    }
-
-    & .steps__description, & .steps__heading, & .steps__number {
-      @include transition(.4);
-      color: red;
-    }
-
-    &__number {
-      @include fontSize(40, 64);
-      margin-right: 20px;
-      line-height: 1.2;
-    }
-
-    &__heading {
-      @include fontSize(18, 20);
-      width: calc(100% - 100px);
-    }
-
-    &__description {
-      font-size: 14px;
-      line-height: 1.42;
-      margin-top: 16px;
-      @media (max-width: $breakpoint-md) {
-        margin-top: 8px;
-      }
-    }
-  }
 }
 
 .s-advantages {
@@ -639,6 +621,10 @@
       width: 60px;
       height: 60px;
       object-fit: contain;
+      @media (max-width: $breakpoint-md) {
+        width: 55px;
+        height: 55px;
+      }
 
       &-wrap {
         width: 122px;
@@ -671,7 +657,7 @@
 
     &__heading {
       @include fontSize(16, 18);
-
+      line-height: 1.5;
     }
 
     &__item {
@@ -680,6 +666,10 @@
       // border-radius: 10px;
       // padding: 16px 24px;
     }
+  }
+
+  & .decor {
+    top: 0;
   }
 }
 
@@ -691,10 +681,25 @@
   }
 
   & .decor {
-    position: absolute;
-    left: 50%;
-    bottom: 198px;
-    transform: translateX(-50%);
+    &.circle-blur {
+      top: 50%;
+      right: 50px;
+      transform: translateY(-50%);
+    }
+
+    &.line {
+      left: 50%;
+      bottom: 198px;
+      transform: translateX(-50%);
+      @media (max-width: $breakpoint-md) {
+        min-width: 120%;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        bottom: auto;
+        transform: translate(-50%, -50%);
+      }
+    }
   }
 
   & .heading {
@@ -716,7 +721,7 @@
       justify-content: space-between;
       backdrop-filter: blur(3.4px);
       @media (max-width: $breakpoint-md) {
-        max-width: 400px;
+        // max-width: 400px;
         margin: 0 auto 25px auto;
         height: auto;
         padding: 40px 13px 64px 13px;
@@ -742,7 +747,8 @@
 
     &__name {
       margin-bottom: 24px;
-      font-size: 32px;
+
+      @include fontSize(24, 32);
       line-height: 1;
 
     }
@@ -769,6 +775,7 @@
         padding: 12px 0;
         font-size: 18px;
         position: relative;
+        line-height: 1.5;
 
         &:not(&:last-child) {
           &:after {
@@ -897,7 +904,7 @@
 
       @media (min-width: 960px) {
 
-        margin-right: calc((-100vw + 920px) / 2);
+        // margin-right: calc((-100vw + 920px) / 2);
       }
       @media (min-width: 1240px) {
 
@@ -931,9 +938,29 @@
 }
 
 .s-cta {
+  padding-bottom: 80px;
+  @media (max-width: $breakpoint-md) {
+    padding-bottom: 0;
+  }
+
   &__inner {
     @media (max-width: $breakpoint-md) {
       text-align: center;
+    }
+  }
+
+  & .decor {
+    &.circle-blur {
+      top: -35%;
+    }
+    &.line{
+      bottom:35%;
+      left:20px;
+      width: 950px;
+      max-width: max-content;
+      @media (max-width: $breakpoint-md) {
+        width: 130%;
+      }
     }
   }
 

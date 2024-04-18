@@ -65,12 +65,53 @@
 .heading-font {
   font-family: 'GothamPro', sans-serif;
 }
+.icon-telegram,.icon-telegram, .icon-viber,.icon-watsapp{
+  &:after {
+    content: '';
+    width: 100%;
+    height: 100%;
+    border-radius: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+  }
+}
+.icon-instagram {
+  &:before {
+    content: "\e900";
+  }
 
-.icon-ar-right:before {
-  content: "\e900";
+  &:after {
+    background: red;
+  }
 }
 
-.icon-check:before {
-  content: "\e901";
-  color: #6534c9;
+.icon-telegram {
+  &:before {
+    content: "\e901";
+  }
+
+  &:after {
+    background: #27A6E5;
+  }
+}
+
+.icon-viber {
+  &:before {
+    content: "\e902";
+  }
+
+  &:after {
+    background: #7C509A;
+  }
+}
+
+.icon-watsapp {
+  &:before {
+    content: "\e903";
+  }
+  &:after {
+    background: #48C95F;
+  }
 }

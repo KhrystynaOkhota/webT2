@@ -84,11 +84,11 @@ input, button {
       border: 1px solid rgba(255, 255, 255, .38);
       cursor: pointer;
       font-weight: 300;
-      @include fontSize(14, 18);
+      font-size: 18px;
       line-height: 1.7;
 
       color: rgba(255, 255, 255, .46);
-      font-family: 'Montserrat', sans-serif;
+      font-family: 'Gilroy', sans-serif;
 
       resize: none;
       padding: 25px 26px;
@@ -114,10 +114,11 @@ input, button {
 
 ::-webkit-input-placeholder {
   font-weight: 300;
-  @include fontSize(14, 18);
+  font-size: 18px;
   line-height: 1.2;
-  color: #B3B3B3;
-  font-family: 'Montserrat', sans-serif;
+
+  color: rgba(255,255,255,.46);
+  font-family: 'Gilroy', sans-serif;
 
   opacity: 1;
   transition: opacity 0.5s;
@@ -125,11 +126,11 @@ input, button {
 
 ::-moz-placeholder {
   font-weight: 300;
-  @include fontSize(14, 18);
+  font-size: 18px;
   line-height: 1.2;
 
-  color: #B3B3B3;
-  font-family: 'Montserrat', sans-serif;
+  color: rgba(255,255,255,.46);
+  font-family: 'Gilroy', sans-serif;
 
   opacity: 1;
   transition: opacity 0.5s;
@@ -137,11 +138,11 @@ input, button {
 
 :-ms-input-placeholder {
   font-weight: 300;
-  @include fontSize(14, 18);
+  font-size: 18px;
   line-height: 1.2;
 
-  color: #B3B3B3;
-  font-family: 'Montserrat', sans-serif;
+  color: rgba(255,255,255,.46);
+  font-family: 'Gilroy', sans-serif;
 
   opacity: 1;
   transition: opacity 0.5s;
@@ -206,7 +207,7 @@ select:-webkit-autofill:focus {
   width: 100%;
   margin: 0;
   position: relative;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Gilroy', sans-serif;
   @media (max-width: $breakpoint-md) {
     max-width: 300px;
     margin: 0 auto;
@@ -237,7 +238,7 @@ select:-webkit-autofill:focus {
   }
 
   button.file-button {
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Gilroy', sans-serif;
     font-size: 16px;
     font-weight: 500;
     height: 100%;

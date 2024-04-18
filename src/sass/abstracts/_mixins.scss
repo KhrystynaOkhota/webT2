@@ -23,9 +23,9 @@
 
 @mixin fontSize($minSize, $maxSize) {
   font-size: $maxSize + 0px;
-  font-size: -webkit-calc(#{$minSize + 0px} + (#{$maxSize} - #{$minSize}) * ((100vw - 300px) / (1920 - 30)));
-  font-size: -moz-calc(#{$minSize + 0px} + (#{$maxSize} - #{$minSize}) * ((100vw - 300px) / (1920 - 30)));
-  font-size: calc(#{$minSize + 0px} + (#{$maxSize} - #{$minSize}) * ((100vw - 300px) / (1920 - 30)));
+  font-size: -webkit-calc(#{$minSize + 0px} + (#{$maxSize} - #{$minSize}) * ((100vw - 300px) / (1920 - 300)));
+  font-size: -moz-calc(#{$minSize + 0px} + (#{$maxSize} - #{$minSize}) * ((100vw - 300px) / (1920 - 300)));
+  font-size: calc(#{$minSize + 0px} + (#{$maxSize} - #{$minSize}) * ((100vw - 300px) / (1920 - 300)));
 }
 
 @mixin order($number) {
