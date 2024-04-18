@@ -336,7 +336,7 @@
         }
       }
 
-      & .decor{
+      & .decor {
         position: absolute;
         z-index: -1;
         top: 50%;
@@ -915,7 +915,6 @@
   }
 
   & .heading {
-
     margin-bottom: 56px;
     @media (max-width: $breakpoint-md) {
       margin-bottom: 30px;
@@ -926,7 +925,6 @@
 
   .clients {
     &__slider {
-
       @media (min-width: 960px) {
 
         // margin-right: calc((-100vw + 920px) / 2);
@@ -958,6 +956,23 @@
     margin-top: 42px;
     @media (max-width: $breakpoint-md) {
       margin-top: 37px;
+    }
+  }
+
+  & .container {
+    position: relative;
+
+    &:after {
+
+      content: '';
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      top: 0;
+      left: 99%;
+      background: rgba(18, 18, 18, .8);
+      z-index: 5;
+
     }
   }
 }
